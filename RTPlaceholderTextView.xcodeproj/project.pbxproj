@@ -22,6 +22,7 @@
 		9C7B9F3618D1FE0E00257657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7B9F1518D1FE0E00257657 /* UIKit.framework */; };
 		9C7B9F3E18D1FE0E00257657 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B9F3C18D1FE0E00257657 /* InfoPlist.strings */; };
 		9C7B9F4018D1FE0E00257657 /* RTPlaceholderTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B9F3F18D1FE0E00257657 /* RTPlaceholderTextViewTests.m */; };
+		9C7B9F4C18D1FE5500257657 /* RTPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B9F4B18D1FE5500257657 /* RTPlaceholderTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		9C7B9F3B18D1FE0E00257657 /* RTPlaceholderTextViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTPlaceholderTextViewTests-Info.plist"; sourceTree = "<group>"; };
 		9C7B9F3D18D1FE0E00257657 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C7B9F3F18D1FE0E00257657 /* RTPlaceholderTextViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTPlaceholderTextViewTests.m; sourceTree = "<group>"; };
+		9C7B9F4A18D1FE5500257657 /* RTPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPlaceholderTextView.h; sourceTree = "<group>"; };
+		9C7B9F4B18D1FE5500257657 /* RTPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPlaceholderTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 		9C7B9F0518D1FE0E00257657 = {
 			isa = PBXGroup;
 			children = (
+				9C7B9F4918D1FE4100257657 /* Classes */,
 				9C7B9F1718D1FE0E00257657 /* RTPlaceholderTextView */,
 				9C7B9F3918D1FE0E00257657 /* RTPlaceholderTextViewTests */,
 				9C7B9F1018D1FE0E00257657 /* Frameworks */,
@@ -153,6 +157,15 @@
 				9C7B9F3C18D1FE0E00257657 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C7B9F4918D1FE4100257657 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B9F4A18D1FE5500257657 /* RTPlaceholderTextView.h */,
+				9C7B9F4B18D1FE5500257657 /* RTPlaceholderTextView.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +270,7 @@
 				9C7B9F2218D1FE0E00257657 /* RTAppDelegate.m in Sources */,
 				9C7B9F2B18D1FE0E00257657 /* RTViewController.m in Sources */,
 				9C7B9F1E18D1FE0E00257657 /* main.m in Sources */,
+				9C7B9F4C18D1FE5500257657 /* RTPlaceholderTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -381,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

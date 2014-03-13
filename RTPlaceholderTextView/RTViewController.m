@@ -9,7 +9,7 @@
 #import "RTViewController.h"
 
 @interface RTViewController ()
-
+- (IBAction)onDismiss:(id)sender;
 @end
 
 @implementation RTViewController
@@ -24,6 +24,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onDismiss:(id)sender
+{
+    [self.view endEditing:YES];
 }
 
 @end
