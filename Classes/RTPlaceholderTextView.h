@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
 @interface RTPlaceholderTextView : UITextView
-@property (nonatomic, strong) NSString * placeholderText;
-@property (nonatomic, strong) UIColor  * placeholderTextColor;   // Default lightGray
+@property (nonatomic, strong) IBInspectable NSString * placeholderText;
+@property (nonatomic, strong) IBInspectable UIColor  * placeholderTextColor;   // Default lightGray
 @end
