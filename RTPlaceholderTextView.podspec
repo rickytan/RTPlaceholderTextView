@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.authors      = { 'Ricky Tan' => 'ricky.tan.xin@gmail.com' }
   s.homepage     = 'https://github.com/rickytan/RTPlaceholderTextView'
   s.platform     = :ios
-  s.summary      = 'A simple to use Paging View Controller, a Android ViewPager Implimetation'
+  s.summary      = 'A UITextView with placeholder supported'
   s.source       = { :git => 'https://github.com/rickytan/RTPlaceholderTextView.git', :tag => s.version.to_s }
   s.license      = 'MIT'
   s.frameworks   = 'UIKit'
