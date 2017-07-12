@@ -10,9 +10,18 @@
 
 @implementation RTPlaceholderTextView
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextViewTextDidChangeNotification object:self];
+}
+
 - (void)commonInit
 {
     self.placeholderTextColor = [UIColor lightGrayColor];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(setNeedsDisplay)
+                                                 name:UITextViewTextDidChangeNotification
+                                               object:self];
 }
 
 - (id)initWithFrame:(CGRect)frame
