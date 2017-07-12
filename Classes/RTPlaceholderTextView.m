@@ -47,16 +47,24 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
     if (self.text.length)
         [super drawRect:rect];
     else {
-        if (!self.isFirstResponder) {
-            [self.placeholderTextColor set];
-            UIEdgeInsets inset = [UIDevice currentDevice].systemVersion.floatValue >= 7.0 ? UIEdgeInsetsMake(8, 5, 8, 5) : UIEdgeInsetsMake(8, 8, 8, 8);
-            [self.placeholderText drawInRect:UIEdgeInsetsInsetRect(UIEdgeInsetsInsetRect(rect, self.contentInset), inset)
-                                    withFont:self.font];
+        UIEdgeInsets inset = UIEdgeInsetsMake(8, 8, 8, 8);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_7_0
+        if ([self respondsToSelector:@selector(textContainerInset)]) {
+            inset = self.textContainerInset;
+            inset.left += self.textContainer.lineFragmentPadding;
+            inset.right += self.textContainer.lineFragmentPadding;
         }
+        [self.placeholderText drawInRect:UIEdgeInsetsInsetRect(UIEdgeInsetsInsetRect(rect, self.contentInset), inset)
+                          withAttributes:@{NSFontAttributeName: self.font,
+                                           NSForegroundColorAttributeName: self.placeholderTextColor}];
+#else
+        [self.placeholderTextColor set];
+        [self.placeholderText drawInRect:UIEdgeInsetsInsetRect(UIEdgeInsetsInsetRect(rect, self.contentInset), inset)
+                                withFont:self.font];
+#endif
     }
 }
 
