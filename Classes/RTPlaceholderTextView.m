@@ -54,6 +54,34 @@
     return [super resignFirstResponder];
 }
 
+- (void)setPlaceholderText:(NSString *)placeholderText
+{
+    if (![_placeholderText isEqualToString:placeholderText]) {
+        _placeholderText = placeholderText;
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)setPlaceholderTextColor:(UIColor *)placeholderTextColor
+{
+    if (![_placeholderTextColor isEqual:placeholderTextColor]) {
+        _placeholderTextColor = placeholderTextColor;
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)setText:(NSString *)text
+{
+    super.text = text;
+    [self setNeedsDisplay];
+}
+
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    super.attributedText = attributedText;
+    [self setNeedsDisplay];
+}
+
 - (void)drawRect:(CGRect)rect
 {
     if (self.text.length)
