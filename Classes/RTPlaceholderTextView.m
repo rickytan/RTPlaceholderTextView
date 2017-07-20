@@ -66,9 +66,13 @@
             inset.left += self.textContainer.lineFragmentPadding;
             inset.right += self.textContainer.lineFragmentPadding;
         }
+        NSMutableDictionary *attr = [self.typingAttributes ?: @{} mutableCopy];
+        attr[NSForegroundColorAttributeName] = self.placeholderTextColor;
+        if (!attr[NSFontAttributeName]) {
+            attr[NSFontAttributeName] = self.font;
+        }
         [self.placeholderText drawInRect:UIEdgeInsetsInsetRect(UIEdgeInsetsInsetRect(rect, self.contentInset), inset)
-                          withAttributes:@{NSFontAttributeName: self.font,
-                                           NSForegroundColorAttributeName: self.placeholderTextColor}];
+                          withAttributes:attr];
 #else
         [self.placeholderTextColor set];
         [self.placeholderText drawInRect:UIEdgeInsetsInsetRect(UIEdgeInsetsInsetRect(rect, self.contentInset), inset)
